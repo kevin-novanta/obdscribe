@@ -1,0 +1,188 @@
+{
+  "main": {
+    "id": "7840ef27dd14957d",
+    "type": "split",
+    "children": [
+      {
+        "id": "97342cf54f7eb694",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e7386c00d4b12c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "obdscribe_v0_build_blueprint_and_repo_layout"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3901f31b38e454c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "12ad1a563cd6ab61",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02a7b632634d30c6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "32353f25e2cf6bd1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e0d7a13c102308ae",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "46b7fda73484339a",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4457034f1948ded",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7cab33335ae42665",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for obdscribe_v0_build_blueprint_and_repo_layout"
+            }
+          },
+          {
+            "id": "c689dbc6868c9ce8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from obdscribe_v0_build_blueprint_and_repo_layout"
+            }
+          },
+          {
+            "id": "339bb1796e41999c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d2f4c34b7aebbc58",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of obdscribe_v0_build_blueprint_and_repo_layout"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "5e7386c00d4b12c3",
+  "lastOpenFiles": [
+    "LICENSE",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    "next.config.mjs",
+    "pnpm-lock.yaml",
+    "package.json",
+    "src/types",
+    "src/lib",
+    "src/app",
+    "src",
+    "docs/obdscribe_v0_goals_and_expectations.md"
+  ]
+}

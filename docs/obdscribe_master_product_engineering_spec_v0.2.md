@@ -964,3 +964,139 @@ Once you have enough history:
   - Live web search when necessary.
 - **Growth path:** start as a smart explainer and gradually layer in risk, estimates, and deep integrations as your data and usage grow.
 
+
+---
+
+# OBDscribe – v0 Implementation Notes and Constraints
+
+This section refines the v0 (first working version) of OBDscribe, focusing on:
+- What is actually implemented in the first build.
+- What is explicitly deferred to later phases.
+- Operational and safety concerns such as JSON reliability and rate limiting.
+
+## 1. v0 Scope Adjustments
+
+### 1.1 AI tools (web_search, vin_decode, job_lookup)
+
+For **v0**, the AI engine will **not** use external tools:
+
+- No `web_search` / browsing.
+- No `vin_decode` tool.
+- No `job_lookup` tool.
+
+Instead, v0 will rely on:
+
+- A single OpenAI reasoning model call.
+- Local enrichment only (e.g., DTC meanings and mileage band classification from Postgres).
+
+The tools remain part of the **future architecture**, but are not wired in for the first release. This keeps v0 simpler, faster, and easier to debug.
+
+### 1.2 API surface (routes)
+
+Full target API surface:
+
+- `/api/generate-report` – core report generation.
+- `/api/reports` – list reports (history).
+- `/api/settings` – shop settings.
+- `/api/auth/login` – login.
+- `/api/health` – health check.
+
+For **v0**, implementation is prioritized as:
+
+- **Must-have now:**
+  - `/api/generate-report`
+  - `/api/auth/login` (even minimal / single-user is OK)
+
+- **Nice-to-have shortly after v0 (v0.1+):**
+  - `/api/reports`
+  - `/api/settings`
+
+- **Operational:**
+  - `/api/health` should be implemented even in early v0 for debugging and uptime checks.
+
+## 2. JSON Reliability and Error Handling
+
+### 2.1 JSON-only contract
+
+The `ai-engine` must treat JSON reliability as a first-class concern:
+
+- All calls to OpenAI will request **JSON output only**.
+- After receiving a response:
+  - Attempt to parse JSON.
+  - If parsing fails:
+    - Option A: make a single retry with a stricter “return valid JSON only” instruction.
+    - Option B (simpler for first pass): return a controlled error to the frontend.
+
+Frontend behavior:
+
+- Show a clear error message (“We could not generate a structured response. Please try again.”).
+- Do not silently fail or show partial garbage output.
+
+### 2.2 Error handling cases
+
+Back-end error classes to explicitly handle:
+
+- OpenAI error (timeout, quota, 5xx).
+- Database error on save.
+- Unexpected internal error.
+
+Guidelines:
+
+- If AI succeeds but DB save fails, still return the AI result to the frontend (log the DB error and mark it for investigation).
+- All unexpected errors should be logged with a correlation ID so specific failures can be traced later.
+
+## 3. Rate Limiting and Safety
+
+Even for early pilots, add a lightweight rate-limit layer around `/api/generate-report`:
+
+- Example: max N requests per IP or per user per minute.
+- On limit exceeded, return a `429 Too Many Requests` with a friendly message.
+
+This protects against:
+
+- Accidental infinite loops in the frontend.
+- Users hammering the button repeatedly.
+- Cost overruns from a runaway bug.
+
+Implementation detail is flexible (middleware, edge function, or library), but **some form of guard** should exist from day one.
+
+## 4. Prompt Versioning and Modes
+
+### 4.1 Prompt versioning
+
+Add a `prompt_version` concept in the `ai-engine`:
+
+- A constant such as `PROMPT_VERSION = "1"`.
+- Include this:
+  - In the prompt metadata.
+  - In the `Report` row as `prompt_version`.
+
+When prompts are changed (tone, structure, risk language), bump to `"2"`, `"3"`, etc. This makes it possible to compare behavior over time and understand why older reports might look different from newer ones.
+
+### 4.2 Mode field in GenerateReportInput
+
+Extend `GenerateReportInput` with a `mode` field:
+
+- `mode?: "production" | "sandbox" | "debug"`
+
+Semantics:
+
+- `production`: real shops, normal logging, user-facing behavior.
+- `sandbox`: internal / test usage (e.g., you testing against your own vehicles).
+- `debug`: may enable extra logging or metadata later (token usage, internal reasoning snapshots, etc.).
+
+For v0, logic can treat all modes the same; the key is to have the field in the type and persisted so future differentiation does not require a breaking change.
+
+## 5. Multi-tenant Foundation from Day One
+
+Even if early usage is just the founder or a very small number of shops, the data model should still:
+
+- Use distinct `shops` and `users` tables.
+- Always associate `Report` rows with a `shop_id` and `user_id`.
+
+This aligns with the multi-tenant shape in the main spec and avoids painful refactors when onboarding real pilot shops.
+
+In practice for v0:
+
+- You may seed a single shop (e.g., `shop_demo`) and a single user.
+- Auth can be minimal (single email/password), but still wired to that shop/user pair.

@@ -1,0 +1,15 @@
+# Ignore exported/binary docs
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
+# OS cruft
+.DS_Store
+
+# Editor backups
+*~
+*.tmp
