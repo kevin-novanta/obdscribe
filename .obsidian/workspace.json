@@ -172,17 +172,17 @@
   },
   "active": "5e7386c00d4b12c3",
   "lastOpenFiles": [
+    "next-env.d.ts",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "node_modules/@prisma",
+    "node_modules/@types",
+    "node_modules",
+    "_tmp_77167_740278d5a5f8f4821ffa950d52986078",
     "LICENSE",
     "tsconfig.json",
     "tailwind.config.ts",
     "postcss.config.mjs",
-    "next.config.mjs",
-    "pnpm-lock.yaml",
-    "package.json",
-    "src/types",
-    "src/lib",
-    "src/app",
-    "src",
     "docs/obdscribe_v0_goals_and_expectations.md"
   ]
 }
