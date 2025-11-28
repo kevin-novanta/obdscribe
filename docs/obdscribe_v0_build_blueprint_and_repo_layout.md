@@ -510,7 +510,7 @@ pnpx prisma studio
 - ~~Add a few `DtcCode` rows: P0301, P0171, P0420, etc.~~
 - ~~Add a few `MaintenanceBand` rows (e.g., 0–30000, 30000–60000, etc.) with simple suggestions JSON.~~
 
----
+~~---~~
 
 ### ~~4.5 Manual testing~~
 
@@ -619,7 +619,7 @@ export function logError(message: string, meta?: unknown) {
 - ~~Run `pnpm dev` – ensure there are no TypeScript or import errors.~~
 - ~~Optionally add a temporary API route using `prisma` to confirm it works, then remove it.~~
 
-### 5.5 Git commit
+### ~~5.5 Git commit~~
 
 ```bash
 git add src/types src/lib/db.ts src/lib/logger.ts
@@ -627,7 +627,7 @@ git commit -m "ch5: add shared report types, Prisma client, and logger"
 git push
 ```
 
----
+~~---~~
 
 ## ~~Chapter 6 – Auth: Auth Helpers, /api/auth/login, and /login Page~~
 
@@ -844,7 +844,7 @@ git commit -m "ch6: implement basic email/password auth and login flow"
 git push
 ```
 
----
+~~---~~
 
 ## ~~Chapter 7 – Authenticated Layout and New Report UI Shell~~
 
@@ -897,7 +897,7 @@ export default function AppLayout({
 }
 ```
 
-### 7~~.2 New Report page UI shell~~
+### ~~7.2 New Report page UI shell~~
 
 ~~Create `src/app/app/new-report/page.tsx`:~~
 
@@ -1096,7 +1096,7 @@ export default function NewReportPage() {
 }
 ```
 
----
+~~---~~
 
 ### ~~7.3 Manual testing~~
 
@@ -1104,7 +1104,7 @@ export default function NewReportPage() {
 - ~~Confirm redirect to `/app/new-report`.~~
 - ~~Ensure layout renders correctly and inputs/outputs are visible (even though API isn’t wired yet).~~
 
-### 7.4 Git commit
+### ~~7.4 Git commit~~
 
 ```bash
 git add src/app/app
@@ -1112,7 +1112,7 @@ git commit -m "ch7: add authenticated app layout and New Report UI shell"
 git push
 ```
 
----
+~~---~~
 
 ## ~~Chapter 8 – AI Engine and /api/generate-report (Core v0 Flow)~~
 
@@ -1337,7 +1337,7 @@ export async function POST(req: NextRequest) {
 }
 ```
 
----
+~~---~~
 
 ### ~~8.3 Manual testing~~
 
@@ -1353,7 +1353,7 @@ export async function POST(req: NextRequest) {
   - ~~You should see loading → AI output in Tech View, Customer View, and Maintenance Suggestions.~~
   - ~~Check the `Report` table via Prisma Studio – a new row should be present with the saved data.~~
 
-### 8.4 Git commit
+### ~~8.4 Git commit~~
 
 ```bash
 git add src/lib/ai/engine.ts src/app/api/generate-report/route.ts
@@ -1361,7 +1361,7 @@ git commit -m "ch8: implement AI engine and core generate-report API"
 git push
 ```
 
----
+~~---~~
 
 ## ~~Chapter 9 – Health Check and Basic Rate Limiting~~
 
@@ -1380,7 +1380,7 @@ export async function GET() {
 }
 ```
 
-### 9.2 Simple rate limiter for /api/generate-report
+### ~~9.2 Simple rate limiter for /api/generate-report~~
 
 ~~Create `src/lib/rateLimiter.ts`:~~
 
@@ -1434,7 +1434,7 @@ if (isRateLimited(String(ip))) {
 }
 ```
 
----
+~~---~~
 
 ### ~~9.3 Manual testing~~
 
@@ -1442,7 +1442,7 @@ if (isRateLimited(String(ip))) {
 - ~~On `/app/new-report`, spam the **Generate Report** button:~~
   - ~~After ~20 requests within a minute, you should receive a 429 error with the friendly message.~~
 
-### 9.4 Git commit
+### ~~9.4 Git commit~~
 
 ```bash
 git add src/app/api/health/route.ts src/lib/rateLimiter.ts src/app/api/generate-report/route.ts
@@ -1450,7 +1450,7 @@ git commit -m "ch9: add health check and basic rate limiting for generate-report
 git push
 ```
 
----
+~~---~~
 
 ## ~~Chapter 10 – v0 Demo Checklist and Final Polish~~
 
@@ -1463,22 +1463,22 @@ git push
 - ~~Optionally:~~
   - ~~Add a small “This month: X reports generated” placeholder somewhere (future upgrade).~~
 
-### 10.2 v0 demo-ready checklist
+### ~~10.2 v0 demo-ready checklist~~
 
-Confirm these conditions are true:
+~~Confirm these conditions are true:~~
 
-- [x] A user can log in successfully.
-- [x] The **New Report** page loads and is usable.
-- [x] Submitting a valid form calls `/api/generate-report` and:
-  - [x] Writes a report row in Postgres.
-  - [x] Returns a structured response to the frontend.
-- [x] Tech View and Customer View are populated with AI-generated content and editable.
-- [x] Invalid inputs are handled with friendly error messages on the frontend.
-- [x] JSON failures or AI errors are handled with a clear message (no blank screen).
-- [x] `/api/health` returns `status: "ok"`.
-- [x] Basic rate limiting on `/api/generate-report` is active.
-- [x] At least one seeded `shop` and `user` is wired into login and data flow.
-- [x] The system can be used end-to-end for a small set of real-world test cases without crashing.
+- [x] ~~A user can log in successfully.~~
+- [x] ~~The **New Report** page loads and is usable.~~
+- [x] ~~Submitting a valid form calls `/api/generate-report` and:~~
+  - [x] ~~Writes a report row in Postgres.~~
+  - [x] ~~Returns a structured response to the frontend.~~
+- [x] ~~Tech View and Customer View are populated with AI-generated content and editable.~~
+- [x] ~~Invalid inputs are handled with friendly error messages on the frontend.~~
+- [x] ~~JSON failures or AI errors are handled with a clear message (no blank screen).~~
+- [x] ~~`/api/health` returns `status: "ok"`.~~
+- [x] ~~Basic rate limiting on `/api/generate-report` is active.~~
+- [x] ~~At least one seeded `shop` and `user` is wired into login and data flow.~~
+- [x] ~~The system can be used end-to-end for a small set of real-world test cases without crashing.~~
 
 ### ~~10.3 Manual end-to-end test flow~~
 
@@ -1495,9 +1495,9 @@ Confirm these conditions are true:
    - ~~Check DB `Report` rows for proper saving.~~
 1. ~~Hit `/api/health` directly and confirm status.~~
 
-### 10.4 Final v0 commit
+### ~~10.4 Final v0 commit~~
 
-When everything above is working:
+~~When everything above is working:~~
 
 ```bash
 git add .
@@ -1505,8 +1505,8 @@ git commit -m "ch10: polish UX and finalize OBDscribe v0 demo build"
 git push
 ```
 
-At this point, you have a **functional, stable, and solid-looking v0** of OBDscribe that:
+~~At this point, you have a **functional, stable, and solid-looking v0** of OBDscribe that:~~
 
-- Matches your product + engineering specs.
-- Implements the core New Report → AI → stored report flow.
-- Is ready to demo to early shops, advisors, or mentors.
+- ~~Matches your product + engineering specs.~~
+- ~~Implements the core New Report → AI → stored report flow.~~
+- ~~Is ready to demo to early shops, advisors, or mentors.~~
