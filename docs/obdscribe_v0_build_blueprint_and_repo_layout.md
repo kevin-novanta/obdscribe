@@ -629,17 +629,17 @@ git push
 
 ---
 
-## Chapter 6 – Auth: Auth Helpers, /api/auth/login, and /login Page
+## ~~Chapter 6 – Auth: Auth Helpers, /api/auth/login, and /login Page~~
 
-### 6.1 Auth utilities
+### ~~6.1 Auth utilities~~
 
-Install dependencies:
+~~Install dependencies:~~
 
 ```bash
 pnpm add bcryptjs jsonwebtoken
 ```
 
-Create `src/lib/auth.ts`:
+~~Create `src/lib/auth.ts`:~~
 
 ```ts
 import { prisma } from "./db";
@@ -665,9 +665,9 @@ export function createSessionToken(userId: string, shopId: string) {
 }
 ```
 
-### 6.2 Session parsing helper
+### ~~6.2 Session parsing helper~~
 
-Create `src/lib/session.ts`:
+~~Create `src/lib/session.ts`:~~
 
 ```ts
 import jwt from "jsonwebtoken";
@@ -691,9 +691,9 @@ export function parseSessionToken(token: string | undefined | null): Session | n
 }
 ```
 
-### 6.3 /api/auth/login route
+### ~~6.3 /api/auth/login route~~
 
-Create `src/app/api/auth/login/route.ts`:
+~~Create `src/app/api/auth/login/route.ts`:~~
 
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -740,9 +740,9 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-### 6.4 /login page
+### ~~6.4 /login page~~
 
-Create `src/app/login/page.tsx`:
+~~Create `src/app/login/page.tsx`:~~
 
 ```tsx
 "use client";
@@ -827,14 +827,14 @@ export default function LoginPage() {
 }
 ```
 
----
+~~---~~
 
-### 6.5 Manual testing
+### ~~6.5 Manual testing~~
 
-- Generate a bcrypt hash for a test password and store it in the `User` row via Prisma Studio.
-- Run `pnpm dev`.
-- Visit `/login` and log in using the seeded email/password.
-- On success, you should be redirected to `/app/new-report` (route will be created next).
+- ~~Generate a bcrypt hash for a test password and store it in the `User` row via Prisma Studio.~~
+- ~~Run `pnpm dev`.~~
+- ~~Visit `/login` and log in using the seeded email/password.~~
+- ~~On success, you should be redirected to `/app/new-report` (route will be created next).~~
 
 ### 6.6 Git commit
 
