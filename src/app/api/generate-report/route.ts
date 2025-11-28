@@ -136,11 +136,15 @@ const created = await prisma.report.create({
     },
   },
 });
-    // 6) Return JSON
+    // 6) Return JSON (flattened for frontend convenience)
     return NextResponse.json(
       {
         id: created.id,
-        report,
+        techView: report.techView,
+        customerView: report.customerView,
+        maintenanceSuggestions: report.maintenanceSuggestions ?? [],
+        riskAssessment: report.riskAssessment ?? null,
+        estimateRange: report.estimateRange ?? null,
       },
       { status: 200 }
     );

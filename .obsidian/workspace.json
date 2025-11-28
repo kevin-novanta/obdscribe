@@ -172,6 +172,7 @@
   },
   "active": "5e7386c00d4b12c3",
   "lastOpenFiles": [
+    "docs/addons.md",
     "src/lib/rateLimiter.ts",
     "src/app/api/health/route.ts",
     "src/app/api/health",
@@ -184,7 +185,6 @@
     "src/lib/ai/engine.ts",
     "src/lib/ai",
     "pnpm-lock.yaml.3028019628",
-    "src/app/app/new-report/page.tsx",
     "docs/obdscribe_master_product_engineering_spec_v0.2.md",
     "docs/Untitled.md",
     "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",

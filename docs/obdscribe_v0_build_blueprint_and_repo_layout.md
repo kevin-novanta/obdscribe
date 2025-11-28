@@ -1452,48 +1452,48 @@ git push
 
 ---
 
-## Chapter 10 – v0 Demo Checklist and Final Polish
+## ~~Chapter 10 – v0 Demo Checklist and Final Polish~~
 
-### 10.1 UX polish passes
+### ~~10.1 UX polish passes~~
 
-- Make sure labels and helper text are clear and readable.
-- Confirm:
-  - Disabled/loading states on buttons.
-  - Form validation errors show meaningful messages.
-- Optionally:
-  - Add a small “This month: X reports generated” placeholder somewhere (future upgrade).
+- ~~Make sure labels and helper text are clear and readable.~~
+- ~~Confirm:~~
+  - ~~Disabled/loading states on buttons.~~
+  - ~~Form validation errors show meaningful messages.~~
+- ~~Optionally:~~
+  - ~~Add a small “This month: X reports generated” placeholder somewhere (future upgrade).~~
 
 ### 10.2 v0 demo-ready checklist
 
 Confirm these conditions are true:
 
-- [ ] A user can log in successfully.
-- [ ] The **New Report** page loads and is usable.
-- [ ] Submitting a valid form calls `/api/generate-report` and:
-  - [ ] Writes a report row in Postgres.
-  - [ ] Returns a structured response to the frontend.
-- [ ] Tech View and Customer View are populated with AI-generated content and editable.
-- [ ] Invalid inputs are handled with friendly error messages on the frontend.
-- [ ] JSON failures or AI errors are handled with a clear message (no blank screen).
-- [ ] `/api/health` returns `status: "ok"`.
-- [ ] Basic rate limiting on `/api/generate-report` is active.
-- [ ] At least one seeded `shop` and `user` is wired into login and data flow.
-- [ ] The system can be used end-to-end for a small set of real-world test cases without crashing.
+- [x] A user can log in successfully.
+- [x] The **New Report** page loads and is usable.
+- [x] Submitting a valid form calls `/api/generate-report` and:
+  - [x] Writes a report row in Postgres.
+  - [x] Returns a structured response to the frontend.
+- [x] Tech View and Customer View are populated with AI-generated content and editable.
+- [x] Invalid inputs are handled with friendly error messages on the frontend.
+- [x] JSON failures or AI errors are handled with a clear message (no blank screen).
+- [x] `/api/health` returns `status: "ok"`.
+- [x] Basic rate limiting on `/api/generate-report` is active.
+- [x] At least one seeded `shop` and `user` is wired into login and data flow.
+- [x] The system can be used end-to-end for a small set of real-world test cases without crashing.
 
-### 10.3 Manual end-to-end test flow
+### ~~10.3 Manual end-to-end test flow~~
 
-1. Seed data:
-   - One `Shop` (e.g., “Demo Auto Repair”).
-   - One `User` with bcrypt-hashed password.
-   - A handful of `DtcCode` and `MaintenanceBand` entries.
-2. Start the app: `pnpm dev`.
-3. Log in at `/login`.
-4. Go to `/app/new-report` and create 3–5 different reports:
-   - Vary make/model/codes/complaints.
-5. For each:
-   - Confirm the AI outputs are returned and editable.
-   - Check DB `Report` rows for proper saving.
-6. Hit `/api/health` directly and confirm status.
+1. ~~Seed data:~~
+   - ~~One `Shop` (e.g., “Demo Auto Repair”).~~
+   - ~~One `User` with bcrypt-hashed password.~~
+   - ~~A handful of `DtcCode` and `MaintenanceBand` entries.~~
+1. ~~Start the app: `pnpm dev`.~~
+2. ~~Log in at `/login`.~~
+3. ~~Go to `/app/new-report` and create 3–5 different reports:~~
+   - ~~Vary make/model/codes/complaints.~~
+1. ~~For each:~~
+   - ~~Confirm the AI outputs are returned and editable.~~
+   - ~~Check DB `Report` rows for proper saving.~~
+1. ~~Hit `/api/health` directly and confirm status.~~
 
 ### 10.4 Final v0 commit
 
