@@ -1363,11 +1363,11 @@ git push
 
 ---
 
-## Chapter 9 – Health Check and Basic Rate Limiting
+## ~~Chapter 9 – Health Check and Basic Rate Limiting~~
 
-### 9.1 /api/health route
+### ~~9.1 /api/health route~~
 
-Create `src/app/api/health/route.ts`:
+~~Create `src/app/api/health/route.ts`:~~
 
 ```ts
 import { NextResponse } from "next/server";
@@ -1382,7 +1382,7 @@ export async function GET() {
 
 ### 9.2 Simple rate limiter for /api/generate-report
 
-Create `src/lib/rateLimiter.ts`:
+~~Create `src/lib/rateLimiter.ts`:~~
 
 ```ts
 const WINDOW_MS = 60 * 1000; // 1 minute
@@ -1419,7 +1419,7 @@ export function isRateLimited(key: string): boolean {
 }
 ```
 
-Wire it into `/api/generate-report/route.ts`:
+~~Wire it into `/api/generate-report/route.ts`:~~
 
 ```ts
 import { isRateLimited } from "@/lib/rateLimiter";
@@ -1436,11 +1436,11 @@ if (isRateLimited(String(ip))) {
 
 ---
 
-### 9.3 Manual testing
+### ~~9.3 Manual testing~~
 
-- Hit `/api/health` in the browser → you should see `{ status: "ok", version: "v0.1.0" }`.
-- On `/app/new-report`, spam the **Generate Report** button:
-  - After ~20 requests within a minute, you should receive a 429 error with the friendly message.
+- ~~Hit `/api/health` in the browser → you should see `{ status: "ok", version: "v0.1.0" }`.~~
+- ~~On `/app/new-report`, spam the **Generate Report** button:~~
+  - ~~After ~20 requests within a minute, you should receive a 429 error with the friendly message.~~
 
 ### 9.4 Git commit
 

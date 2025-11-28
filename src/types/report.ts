@@ -3,19 +3,20 @@ export type RiskLevel = "low" | "medium" | "high";
 export type GenerateReportMode = "production" | "sandbox" | "debug" | "premium";
 
 export type GenerateReportInput = {
-  mode?: GenerateReportMode;
-  shopId: string;
-  userId: string;
   vehicle: {
-    year?: number;
-    make?: string;
-    model?: string;
+    year: number;
+    make: string;
+    model: string;
     trim?: string;
     mileage?: number;
   };
-  codes: string[];
+  codes: string[];             // or your existing shape here
   complaint: string;
   notes?: string;
+  mode?: GenerateReportMode;
+  shopContext?: {
+    laborRate?: number;
+  };
 };
 
 export type GenerateReportOutput = {
