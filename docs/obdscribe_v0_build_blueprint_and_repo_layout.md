@@ -836,7 +836,7 @@ export default function LoginPage() {
 - ~~Visit `/login` and log in using the seeded email/password.~~
 - ~~On success, you should be redirected to `/app/new-report` (route will be created next).~~
 
-### 6.6 Git commit
+### ~~6.6 Git commit~~
 
 ```bash
 git add src/lib/auth.ts src/lib/session.ts src/app/api/auth/login/route.ts src/app/login/page.tsx
@@ -846,11 +846,11 @@ git push
 
 ---
 
-## Chapter 7 – Authenticated Layout and New Report UI Shell
+## ~~Chapter 7 – Authenticated Layout and New Report UI Shell~~
 
-### 7.1 Authenticated app layout
+### ~~7.1 Authenticated app layout~~
 
-Create `src/app/app/layout.tsx`:
+~~Create `src/app/app/layout.tsx`:~~
 
 ```tsx
 import Link from "next/link";
@@ -897,9 +897,9 @@ export default function AppLayout({
 }
 ```
 
-### 7.2 New Report page UI shell
+### 7~~.2 New Report page UI shell~~
 
-Create `src/app/app/new-report/page.tsx`:
+~~Create `src/app/app/new-report/page.tsx`:~~
 
 ```tsx
 "use client";
@@ -1098,11 +1098,11 @@ export default function NewReportPage() {
 
 ---
 
-### 7.3 Manual testing
+### ~~7.3 Manual testing~~
 
-- Log in at `/login`.
-- Confirm redirect to `/app/new-report`.
-- Ensure layout renders correctly and inputs/outputs are visible (even though API isn’t wired yet).
+- ~~Log in at `/login`.~~
+- ~~Confirm redirect to `/app/new-report`.~~
+- ~~Ensure layout renders correctly and inputs/outputs are visible (even though API isn’t wired yet).~~
 
 ### 7.4 Git commit
 
