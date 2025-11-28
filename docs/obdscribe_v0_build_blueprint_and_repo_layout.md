@@ -518,7 +518,7 @@ pnpx prisma studio
   - ~~Tables exist.~~
   - ~~You can insert sample data without errors.~~
 
-### 4.6 Git commit
+### ~~4.6 Git commit~~
 
 ```bash
 git add prisma/schema.prisma
@@ -526,13 +526,13 @@ git commit -m "ch4: define Prisma schema for shops, users, reports, and static d
 git push
 ```
 
----
+~~---~~
 
-## Chapter 5 – Shared Types, DB Client, and Helpers
+## ~~Chapter 5 – Shared Types, DB Client, and Helpers~~
 
-### 5.1 Shared report types
+### ~~5.1 Shared report types~~
 
-Create `src/types/report.ts`:
+~~Create `src/types/report.ts`:~~
 
 ```ts
 export type RiskLevel = "low" | "medium" | "high";
@@ -575,9 +575,9 @@ export type GenerateReportOutput = {
 };
 ```
 
-### 5.2 Prisma client wrapper
+### ~~5.2 Prisma client wrapper~~
 
-Create `src/lib/db.ts`:
+~~Create `src/lib/db.ts`:~~
 
 ```ts
 import { PrismaClient } from "@prisma/client";
@@ -598,9 +598,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 ```
 
-### 5.3 Simple logger
+### ~~5.3 Simple logger~~
 
-Create `src/lib/logger.ts`:
+~~Create `src/lib/logger.ts`:~~
 
 ```ts
 export function logInfo(message: string, meta?: unknown) {
@@ -612,12 +612,12 @@ export function logError(message: string, meta?: unknown) {
 }
 ```
 
----
+~~---~~
 
-### 5.4 Manual testing
+### ~~5.4 Manual testing~~
 
-- Run `pnpm dev` – ensure there are no TypeScript or import errors.
-- Optionally add a temporary API route using `prisma` to confirm it works, then remove it.
+- ~~Run `pnpm dev` – ensure there are no TypeScript or import errors.~~
+- ~~Optionally add a temporary API route using `prisma` to confirm it works, then remove it.~~
 
 ### 5.5 Git commit
 
