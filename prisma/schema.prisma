@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Shop {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users   User[]
+  reports Report[]
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("advisor") // "owner" | "advisor" later
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  shop   Shop   @relation(fields: [shopId], references: [id])
+  shopId String
+
+  reports Report[]
+}
+
+model Report {
+  id        String   @id @default(cuid())
+  shop      Shop     @relation(fields: [shopId], references: [id])
+  shopId    String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+
+  vehicleYear   Int?
+  vehicleMake   String?
+  vehicleModel  String?
+  vehicleTrim   String?
+  mileage       Int?
+
+  codesRaw      String   // raw input as typed, e.g. "P0301, P0171"
+  complaint     String
+  notes         String?
+
+  techView               String
+  customerView           String
+  maintenanceSuggestions String // JSON-encoded array of strings
+
+  promptVersion String
+  mode          String   // "production" | "sandbox" | "debug"
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DtcCode {
+  code           String   @id
+  genericMeaning String
+  category       String?  // e.g. ignition, emissions
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model MaintenanceBand {
+  id          Int      @id @default(autoincrement())
+  minMileage  Int
+  maxMileage  Int
+  suggestions String   // JSON-encoded array of strings
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

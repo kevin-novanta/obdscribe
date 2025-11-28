@@ -12,26 +12,28 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "@prisma/client": "latest",
+    "autoprefixer": "latest",
     "bcryptjs": "latest",
     "jsonwebtoken": "latest",
-    "openai": "latest"
+    "next": "latest",
+    "openai": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "prisma": "latest",
-    "typescript": "latest",
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/bcryptjs": "latest",
     "@types/jsonwebtoken": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "dotenv": "^17.2.3",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "prisma": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }

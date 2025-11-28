@@ -172,17 +172,19 @@
   },
   "active": "5e7386c00d4b12c3",
   "lastOpenFiles": [
-    "next-env.d.ts",
-    "src/app/layout.tsx",
-    "src/app/page.tsx",
+    "docs/obdscribe_master_product_engineering_spec_v0.2.md",
+    "docs/Untitled.md",
+    "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
+    "prisma/migrations/20251128033202_init_schema/migration.sql",
+    "prisma/migrations/migration_lock.toml",
+    "prisma/migrations/20251128033202_init_schema",
+    "prisma/migrations",
+    "prisma.config.ts",
+    "pnpm-lock.yaml",
     "node_modules/@prisma",
+    "node_modules/@tailwindcss",
     "node_modules/@types",
     "node_modules",
-    "_tmp_77167_740278d5a5f8f4821ffa950d52986078",
-    "LICENSE",
-    "tsconfig.json",
-    "tailwind.config.ts",
-    "postcss.config.mjs",
     "docs/obdscribe_v0_goals_and_expectations.md"
   ]
 }

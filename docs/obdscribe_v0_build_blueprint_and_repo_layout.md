@@ -1,66 +1,66 @@
-# OBDscribe – v0 Build Blueprint & Repo Layout
+# ~~OBDscribe – v0 Build Blueprint & Repo Layout~~
 
-Version: 0.1  
-Goal: Turn the existing OBDscribe specs into a **step-by-step build gameplan** that gets us to a working, demo-ready v0.
+~~Version: 0.1~~  
+~~Goal: Turn the existing OBDscribe specs into a **step-by-step build gameplan** that gets us to a working, demo-ready v0.~~
 
-By the end of this blueprint, you should be able to:
+~~By the end of this blueprint, you should be able to:~~
 
-- Create a repo with a clean, scalable layout.
-- Configure env, DB, and AI wiring.
-- Implement auth, the New Report flow, and `/api/generate-report`.
-- Hit the v0 demo-ready checklist from your goals doc.
+- ~~Create a repo with a clean, scalable layout.~~
+- ~~Configure env, DB, and AI wiring.~~
+- ~~Implement auth, the New Report flow, and `/api/generate-report`.~~
+- ~~Hit the v0 demo-ready checklist from your goals doc.~~
 
-Each chapter includes:
+~~Each chapter includes:~~
 
-- **Files & directories** to create.
-- **What each piece does**.
-- **Manual testing** to run before committing.
-- A suggested **Git commit message**.
+- ~~**Files & directories** to create.~~
+- ~~**What each piece does**.~~
+- ~~**Manual testing** to run before committing.~~
+- ~~A suggested **Git commit message**.~~
 
----
+~~---~~
 
-## Chapter 0 – Prereqs, Tech Choices, and High-Level Shape
+## ~~Chapter 0 – Prereqs, Tech Choices, and High-Level Shape~~
 
-### 0.1 Core tech decisions
+### ~~0.1 Core tech decisions~~
 
-- **Runtime:** Node.js 20+ (LTS).
-- **Package manager:** `pnpm` (you can substitute `npm` if you prefer).
-- **Framework:** Next.js 14+ with the App Router.
-- **Language:** TypeScript.
-- **Styling:** Tailwind CSS.
-- **Database:** Postgres (Supabase / Neon / Railway / local Docker).
-- **ORM:** Prisma.
-- **Auth:** Minimal email/password with JWT session cookie.
-- **AI:** OpenAI advanced reasoning model (e.g. `gpt-5.1-thinking`) via an internal `ai-engine` module.
-- **Hosting (later):** Vercel for Next.js; managed Postgres elsewhere.
+- ~~**Runtime:** Node.js 20+ (LTS).~~
+- ~~**Package manager:** `pnpm` (you can substitute `npm` if you prefer).~~
+- ~~**Framework:** Next.js 14+ with the App Router.~~
+- ~~**Language:** TypeScript.~~
+- ~~**Styling:** Tailwind CSS.~~
+- ~~**Database:** Postgres (Supabase / Neon / Railway / local Docker).~~
+- ~~**ORM:** Prisma.~~
+- ~~**Auth:** Minimal email/password with JWT session cookie.~~
+- ~~**AI:** OpenAI advanced reasoning model (e.g. `gpt-5.1-thinking`) via an internal `ai-engine` module.~~
+- ~~**Hosting (later):** Vercel for Next.js; managed Postgres elsewhere.~~
 
-### 0.2 v0 feature scope reminder
+### ~~0.2 v0 feature scope reminder~~
 
-For v0, we are building:
+~~For v0, we are building:~~
 
-- `/login` – email/password login.
-- `/app/new-report` – New Report UI with:
-  - Vehicle + codes + complaint + notes.
-  - Generated Tech View, Customer View, and maintenance suggestions.
-- API routes:
-  - `/api/auth/login` – minimal auth.
-  - `/api/generate-report` – validate → enrich → AI → store → return JSON.
-  - `/api/health` – health check.
-- DB tables:
-  - shops, users, reports, dtc_codes, maintenance_bands.
+- ~~`/login` – email/password login.~~
+- ~~`/app/new-report` – New Report UI with:~~
+  - ~~Vehicle + codes + complaint + notes.~~
+  - ~~Generated Tech View, Customer View, and maintenance suggestions.~~
+- ~~API routes:~~
+  - ~~`/api/auth/login` – minimal auth.~~
+  - ~~`/api/generate-report` – validate → enrich → AI → store → return JSON.~~
+  - ~~`/api/health` – health check.~~
+- ~~DB tables:~~
+  - ~~shops, users, reports, dtc_codes, maintenance_bands.~~
 
-Not required in v0 (can be v0.1+):
+~~Not required in v0 (can be v0.1+):~~
 
-- `/app/history`, `/app/settings` and their APIs.
-- Risk assessment, estimates, VIN decoding, external tools.
+- ~~`/app/history`, `/app/settings` and their APIs.~~
+- ~~Risk assessment, estimates, VIN decoding, external tools.~~
 
----
+~~---~~
 
-## Chapter 1 – Repo Skeleton, Docs, and .gitignore
+## ~~Chapter 1 – Repo Skeleton, Docs, and .gitignore~~
 
-### 1.1 Recommended repo layout (top level)
+### ~~1.1 Recommended repo layout (top level)~~
 
-From your `OBDscribe/` root, target this structure:
+~~From your `OBDscribe/` root, target this structure:~~
 
 ```text
 OBDscribe/
@@ -88,22 +88,22 @@ OBDscribe/
   LICENSE
 ```
 
-**What each top-level piece is for:**
+~~**What each top-level piece is for:**~~
 
-- `docs/` – all product + engineering specs and internal docs.
-- `prisma/` – DB schema and migrations.
-- `public/` – static assets (logos, favicons, etc.).
-- `src/app/` – Next.js App Router routes (pages + layouts + API routes).
-- `src/lib/` – shared libraries (db client, AI engine, auth helpers, rate limiter).
-- `src/types/` – shared TypeScript types (GenerateReportInput/Output, etc.).
-- `.env.example` – template listing required environment variables.
-- `.gitignore` – ignore rules so you don’t commit node_modules, env, etc.
-- `README.md` – high-level repo overview.
-- `LICENSE` – license (MIT or your choice).
+- ~~`docs/` – all product + engineering specs and internal docs.~~
+- ~~`prisma/` – DB schema and migrations.~~
+- ~~`public/` – static assets (logos, favicons, etc.).~~
+- ~~`src/app/` – Next.js App Router routes (pages + layouts + API routes).~~
+- ~~`src/lib/` – shared libraries (db client, AI engine, auth helpers, rate limiter).~~
+- ~~`src/types/` – shared TypeScript types (GenerateReportInput/Output, etc.).~~
+- ~~`.env.example` – template listing required environment variables.~~
+- ~~`.gitignore` – ignore rules so you don’t commit node_modules, env, etc.~~
+- ~~`README.md` – high-level repo overview.~~
+- ~~`LICENSE` – license (MIT or your choice).~~
 
-### 1.2 Root README
+### ~~1.2 Root README~~
 
-Create `README.md`:
+~~Create `README.md`:~~
 
 ```md
 # OBDscribe
@@ -121,9 +121,9 @@ Core idea:
   `docs/obdscribe_v0_goals_and_expectations.md` for product and engineering details.
 ```
 
-### 1.3 Root .gitignore
+### ~~1.3 Root .gitignore~~
 
-Create `./.gitignore`:
+~~Create `./.gitignore`:~~
 
 ```gitignore
 # Node / Next / TypeScript
@@ -163,9 +163,9 @@ Desktop.ini
 *.tmp
 ```
 
-### 1.4 docs/.gitignore
+### ~~1.4 docs/.gitignore~~
 
-In `docs/`, create `docs/.gitignore`:
+~~In `docs/`, create `docs/.gitignore`:~~
 
 ```gitignore
 # Ignore exported/binary docs
@@ -185,18 +185,18 @@ In `docs/`, create `docs/.gitignore`:
 *.tmp
 ```
 
-### 1.5 LICENSE
+### ~~1.5 LICENSE~~
 
-Add MIT or similar in `LICENSE` if you want the repo to be open source. Otherwise you can skip or add a private notice.
+~~Add MIT or similar in `LICENSE` if you want the repo to be open source. Otherwise you can skip or add a private notice.~~
 
----
+~~---~~
 
-### 1.6 Manual testing
+### ~~1.6 Manual testing~~
 
-- From repo root, run `ls` and confirm the folders/files exist where expected.
-- Open `README.md` and the docs in VS Code – check that paths and naming are consistent.
+- ~~From repo root, run `ls` and confirm the folders/files exist where expected.~~
+- ~~Open `README.md` and the docs in VS Code – check that paths and naming are consistent.~~
 
-### 1.7 Git commit
+### ~~1.7 Git commit~~
 
 ```bash
 git add .
@@ -204,13 +204,13 @@ git commit -m "ch1: add repo skeleton, docs, and gitignore configuration"
 git push
 ```
 
----
+~~---~~
 
-## Chapter 2 – Initialize Next.js App (App Router, TS, Tailwind)
+## ~~Chapter 2 – Initialize Next.js App (App Router, TS, Tailwind)~~
 
-### 2.1 Scaffold Next.js
+### ~~2.1 Scaffold Next.js~~
 
-From repo root:
+~~From repo root:~~
 
 ```bash
 pnpm create next-app@latest . \
@@ -221,23 +221,23 @@ pnpm create next-app@latest . \
   --src-dir
 ```
 
-If the CLI asks interactively:
+~~If the CLI asks interactively:~~
 
-- Use `src/` directory: yes.
-- Use App Router: yes.
+- ~~Use `src/` directory: yes.~~
+- ~~Use App Router: yes.~~
 
-This creates:
+~~This creates:~~
 
-- `src/app/` with base pages.
-- `next.config.mjs`
-- `tsconfig.json`
-- `tailwind.config.ts`
-- `postcss.config.mjs`
-- `package.json`
+- ~~`src/app/` with base pages.~~
+- ~~`next.config.mjs`~~
+- ~~`tsconfig.json`~~
+- ~~`tailwind.config.ts`~~
+- ~~`postcss.config.mjs`~~
+- ~~`package.json`~~
 
-### 2.2 Clean landing page
+### ~~2.2 Clean landing page~~
 
-Edit `src/app/page.tsx`:
+~~Edit `src/app/page.tsx`:~~
 
 ```tsx
 export default function HomePage() {
@@ -254,9 +254,9 @@ export default function HomePage() {
 }
 ```
 
-### 2.3 Root layout
+### ~~2.3 Root layout~~
 
-Ensure `src/app/layout.tsx` is wired as:
+~~Ensure `src/app/layout.tsx` is wired as:~~
 
 ```tsx
 import type { Metadata } from "next";
@@ -282,19 +282,19 @@ export default function RootLayout({
 }
 ```
 
----
+~~---~~
 
-### 2.4 Manual testing
+### ~~2.4 Manual testing~~
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-- Visit `http://localhost:3000`.
-- Confirm the placeholder homepage appears and there are no build errors.
+- ~~Visit `http://localhost:3000`.~~
+- ~~Confirm the placeholder homepage appears and there are no build errors.~~
 
-### 2.5 Git commit
+### ~~2.5 Git commit~~
 
 ```bash
 git add .
@@ -302,13 +302,13 @@ git commit -m "ch2: scaffold Next.js app with Tailwind and base layout"
 git push
 ```
 
----
+~~---~~
 
-## Chapter 3 – Env, Config, and .env.example
+## ~~Chapter 3 – Env, Config, and .env.example~~
 
-### 3.1 .env.example
+### ~~3.1 .env.example~~
 
-Create `.env.example` at repo root:
+~~Create `.env.example` at repo root:~~
 
 ```env
 # Server / runtime
@@ -327,11 +327,11 @@ OPENAI_API_KEY=sk-your-key-here
 APP_BASE_URL=http://localhost:3000
 ```
 
-You’ll create an **untracked** `.env.local` by copying this file and filling real values.
+~~You’ll create an **untracked** `.env.local` by copying this file and filling real values.~~
 
-### 3.2 next.config.mjs
+### ~~3.2 next.config.mjs~~
 
-Ensure `next.config.mjs` exists; default is fine for v0:
+~~Ensure `next.config.mjs` exists; default is fine for v0:~~
 
 ```js
 /** @type {import('next').NextConfig} */
@@ -340,9 +340,9 @@ const nextConfig = {};
 export default nextConfig;
 ```
 
-### 3.3 tsconfig.json
+### ~~3.3 tsconfig.json~~
 
-Update TS config to support `@/lib` and `@/types` imports:
+~~Update TS config to support `@/lib` and `@/types` imports:~~
 
 ```json
 {
@@ -373,15 +373,15 @@ Update TS config to support `@/lib` and `@/types` imports:
 }
 ```
 
----
+~~---~~
 
-### 3.4 Manual testing
+### ~~3.4 Manual testing~~
 
-- Copy `.env.example` → `.env.local`.
-- Fill in a dummy `DATABASE_URL` (you’ll fix it later when Postgres is ready).
-- Run `pnpm dev` – verify app still builds.
+- ~~Copy `.env.example` → `.env.local`.~~
+- ~~Fill in a dummy `DATABASE_URL` (you’ll fix it later when Postgres is ready).~~
+- ~~Run `pnpm dev` – verify app still builds.~~
 
-### 3.5 Git commit
+### ~~3.5 Git commit~~
 
 ```bash
 git add .env.example next.config.mjs tsconfig.json
@@ -389,11 +389,11 @@ git commit -m "ch3: define env template, Next config, and TS path aliases"
 git push
 ```
 
----
+~~---~~
 
-## Chapter 4 – Database Setup with Prisma (Shops, Users, Reports, DTC Data)
+## ~~Chapter 4 – Database Setup with Prisma (Shops, Users, Reports, DTC Data)~~
 
-### 4.1 Install Prisma
+### ~~4.1 Install Prisma~~
 
 ```bash
 pnpm add -D prisma
@@ -401,14 +401,14 @@ pnpm add @prisma/client
 pnpx prisma init
 ```
 
-This creates:
+~~This creates:~~
 
-- `prisma/schema.prisma`
-- `.env` (you can ignore this and keep using `.env.local`, just ensure DATABASE_URL matches).
+- ~~`prisma/schema.prisma`~~
+- ~~`.env` (you can ignore this and keep using `.env.local`, just ensure DATABASE_URL matches).~~
 
-### 4.2 Define schema.prisma
+### ~~4.2 Define schema.prisma~~
 
-Edit `prisma/schema.prisma`:
+~~Edit `prisma/schema.prisma`:~~
 
 ```prisma
 generator client {
@@ -490,33 +490,33 @@ model MaintenanceBand {
 }
 ```
 
-### 4.3 Generate client and run migrations
+### ~~4.3 Generate client and run migrations~~
 
 ```bash
 pnpx prisma generate
 pnpx prisma migrate dev --name init_schema
 ```
 
-### 4.4 Seed some static data (via Prisma Studio)
+### ~~4.4 Seed some static data (via Prisma Studio)~~
 
-Run:
+~~Run:~~
 
 ```bash
 pnpx prisma studio
 ```
 
-- Add a `Shop` row (e.g., `Demo Shop`).
-- Add a `User` row tied to that shop (you’ll fill `passwordHash` later).
-- Add a few `DtcCode` rows: P0301, P0171, P0420, etc.
-- Add a few `MaintenanceBand` rows (e.g., 0–30000, 30000–60000, etc.) with simple suggestions JSON.
+- ~~Add a `Shop` row (e.g., `Demo Shop`).~~
+- ~~Add a `User` row tied to that shop (you’ll fill `passwordHash` later).~~
+- ~~Add a few `DtcCode` rows: P0301, P0171, P0420, etc.~~
+- ~~Add a few `MaintenanceBand` rows (e.g., 0–30000, 30000–60000, etc.) with simple suggestions JSON.~~
 
 ---
 
-### 4.5 Manual testing
+### ~~4.5 Manual testing~~
 
-- Run `pnpx prisma studio` and confirm:
-  - Tables exist.
-  - You can insert sample data without errors.
+- ~~Run `pnpx prisma studio` and confirm:~~
+  - ~~Tables exist.~~
+  - ~~You can insert sample data without errors.~~
 
 ### 4.6 Git commit
 
