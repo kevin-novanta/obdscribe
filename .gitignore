@@ -33,3 +33,7 @@ Desktop.ini
 *.swp
 *.swo
 *.tmp
+
+# DOCS
+
+docs/PERSONAL/
