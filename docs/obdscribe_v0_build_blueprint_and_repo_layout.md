@@ -1114,17 +1114,17 @@ git push
 
 ---
 
-## Chapter 8 – AI Engine and /api/generate-report (Core v0 Flow)
+## ~~Chapter 8 – AI Engine and /api/generate-report (Core v0 Flow)~~
 
-### 8.1 AI engine implementation
+### ~~8.1 AI engine implementation~~
 
-Install OpenAI SDK:
+~~Install OpenAI SDK:~~
 
 ```bash
 pnpm add openai
 ```
 
-Create `src/lib/ai/engine.ts`:
+~~Create `src/lib/ai/engine.ts`:~~
 
 ```ts
 import OpenAI from "openai";
@@ -1235,9 +1235,9 @@ async function findMaintenanceBand(mileage: number | null) {
 }
 ```
 
-### 8.2 /api/generate-report route
+### ~~8.2 /api/generate-report route~~
 
-Create `src/app/api/generate-report/route.ts`:
+~~Create `src/app/api/generate-report/route.ts`:~~
 
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -1339,19 +1339,19 @@ export async function POST(req: NextRequest) {
 
 ---
 
-### 8.3 Manual testing
+### ~~8.3 Manual testing~~
 
-- Ensure `OPENAI_API_KEY` is set in `.env.local`.
-- Start app: `pnpm dev`.
-- Log in via `/login`.
-- Go to `/app/new-report` and enter:
-  - A realistic vehicle (e.g., 2018 Toyota Corolla).
-  - Some common OBD codes (P0301, P0171).
-  - Mileage.
-  - Complaint text.
-- Click **Generate Report**:
-  - You should see loading → AI output in Tech View, Customer View, and Maintenance Suggestions.
-  - Check the `Report` table via Prisma Studio – a new row should be present with the saved data.
+- ~~Ensure `OPENAI_API_KEY` is set in `.env.local`.~~
+- ~~Start app: `pnpm dev`.~~
+- ~~Log in via `/login`.~~
+- ~~Go to `/app/new-report` and enter:~~
+  - ~~A realistic vehicle (e.g., 2018 Toyota Corolla).~~
+  - ~~Some common OBD codes (P0301, P0171).~~
+  - ~~Mileage.~~
+  - ~~Complaint text.~~
+- ~~Click **Generate Report**:~~
+  - ~~You should see loading → AI output in Tech View, Customer View, and Maintenance Suggestions.~~
+  - ~~Check the `Report` table via Prisma Studio – a new row should be present with the saved data.~~
 
 ### 8.4 Git commit
 

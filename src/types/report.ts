@@ -1,6 +1,6 @@
 export type RiskLevel = "low" | "medium" | "high";
 
-export type GenerateReportMode = "production" | "sandbox" | "debug";
+export type GenerateReportMode = "production" | "sandbox" | "debug" | "premium";
 
 export type GenerateReportInput = {
   mode?: GenerateReportMode;
