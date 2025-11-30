@@ -11,11 +11,13 @@
             "id": "67dffb889ca10b1b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.pdf"
+                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
+              "icon": "lucide-file",
               "title": "obdscribe_history_feature_evidence_v0.1"
             }
           }
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for obdscribe_history_feature_evidence_v0.1"
             }
           },
           {
@@ -110,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from obdscribe_history_feature_evidence_v0.1"
             }
           },
           {
@@ -165,8 +169,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "02a7b632634d30c6",
+  "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
+    "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.33 PM.png",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.06 PM.png",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.54.46 PM.png",
@@ -177,7 +182,6 @@
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.51.54 PM.png",
     "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.pdf",
     "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
-    "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25",
     "src/app/app/history/HistoryFilterForm.tsx",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
@@ -192,7 +196,6 @@
     "docs/PERSONAL/Untitled.md",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.08.32 PM.png",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.57 PM.png",
-    "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.35 PM.png",
     "docs/obdscribe_v0_build_blueprint_and_repo_layout.md",
     "docs/PERSONAL/README.md",
     "docs/PERSONAL/obdscribe_v0_goals_and_expectations.md",
