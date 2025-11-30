@@ -12,7 +12,7 @@ import { cookies } from "next/headers";
 import { listRecentReportsForShop } from "@/lib/history";
 import { parseSessionToken } from "@/lib/session";
 import { DeleteReportButton } from "./DeleteReportButton";
-import { MAKES, VEHICLE_MAKE_MODELS } from "@/data/vehicleOptions";
+import HistoryFilterForm from "./HistoryFilterForm";
 
 async function getSessionFromCookies() {
   const cookieStore = await cookies();
@@ -44,12 +44,6 @@ export default async function HistoryPage({
     searchParams,
   ]);
 
-  const selectedMake = sp.make ?? "";
-  const modelsForMake =
-    selectedMake && VEHICLE_MAKE_MODELS[selectedMake]
-      ? VEHICLE_MAKE_MODELS[selectedMake]
-      : [];
-
   if (!session) {
     return (
       <div className="p-4 text-sm">
@@ -77,90 +71,7 @@ export default async function HistoryPage({
     <div className="p-6 space-y-4">
       <h1 className="text-lg font-semibold mb-2">Report History</h1>
 
-      {/* Filter form */}
-      <form className="grid gap-2 md:grid-cols-6 text-sm mb-4" method="GET">
-        <div className="flex flex-col">
-          <label className="mb-1">Make</label>
-          <select
-            name="make"
-            defaultValue={selectedMake}
-            className="border rounded px-2 py-1 bg-white"
-          >
-            <option value="">All makes</option>
-            {MAKES.map((make) => (
-              <option key={make} value={make}>
-                {make}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-1">Model</label>
-          <select
-            name="model"
-            defaultValue={sp.model ?? ""}
-            className="border rounded px-2 py-1 bg-white"
-            disabled={!selectedMake}
-          >
-            <option value="">All models</option>
-            {modelsForMake.map((model) => (
-              <option key={model} value={model}>
-                {model}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-1">OBD Code</label>
-          <input
-            name="code"
-            defaultValue={sp.code ?? ""}
-            className="border rounded px-2 py-1"
-            placeholder="e.g. P0301"
-          />
-        </div>
-        <div className="flex flex-col md:col-span-2">
-          <label className="mb-1">Complaint Search</label>
-          <input
-            name="q"
-            defaultValue={sp.q ?? ""}
-            className="border rounded px-2 py-1"
-            placeholder="rough idle, misfire..."
-          />
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-1">From</label>
-          <input
-            type="date"
-            name="from"
-            defaultValue={sp.from ?? ""}
-            className="border rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-1">To</label>
-          <input
-            type="date"
-            name="to"
-            defaultValue={sp.to ?? ""}
-            className="border rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex items-end gap-2 md:col-span-2">
-          <button
-            type="submit"
-            className="border rounded px-3 py-1 text-sm bg-gray-900 text-white"
-          >
-            Apply
-          </button>
-          <a
-            href="/app/history"
-            className="text-xs text-gray-600 underline"
-          >
-            Clear
-          </a>
-        </div>
-      </form>
+      <HistoryFilterForm searchParams={sp} />
 
       {reports.length === 0 ? (
         <div className="text-sm text-gray-500">
@@ -178,6 +89,7 @@ export default async function HistoryPage({
                 <th className="px-3 py-2 text-left">Codes</th>
                 <th className="px-3 py-2 text-left">Complaint</th>
                 <th className="px-3 py-2 text-left">Mode</th>
+                <th className="px-3 py-2 text-left">Status</th>
                 <th className="px-3 py-2 text-left">Actions</th>
               </tr>
             </thead>
@@ -200,6 +112,9 @@ export default async function HistoryPage({
                   </td>
                   <td className="px-3 py-2">
                     {(r as any).mode ?? "standard"}
+                  </td>
+                  <td className="px-3 py-2">
+                    {(r as any).status ?? "COMPLETED"}
                   </td>
                   <td className="px-3 py-2 space-x-2">
                     <Link

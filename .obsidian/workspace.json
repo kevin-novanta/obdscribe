@@ -171,6 +171,7 @@
   },
   "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
+    "src/app/app/history/HistoryFilterForm.tsx",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
     "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
     "docs/PERSONAL/addons.md",

@@ -55,6 +55,9 @@ export default async function ReportDetailPage({ params }: Params) {
           <p className="text-xs text-gray-500">
             Created at {report.createdAt.toLocaleString()}
           </p>
+          <p className="text-xs text-gray-500">
+            Status: {(report as any).status ?? "COMPLETED"}
+          </p>
         </div>
         <div className="flex items-center gap-3">
           <a
