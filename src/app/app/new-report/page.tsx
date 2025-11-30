@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
+import { YEARS, MAKES, VEHICLE_MAKE_MODELS } from "@/data/vehicleOptions";
 
 type FormState = {
   year?: number;
@@ -20,6 +21,11 @@ export default function NewReportPage() {
     codes: "",
     complaint: "",
   });
+
+  const availableModels = useMemo(() => {
+    if (!form.make) return [];
+    return VEHICLE_MAKE_MODELS[form.make] ?? [];
+  }, [form.make]);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -71,12 +77,20 @@ export default function NewReportPage() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-medium mb-1">Year</label>
-                <input
-                  type="number"
+                <select
                   className="w-full border rounded px-2 py-1 text-sm"
-                  value={form.year ?? ""}
-                  onChange={e => updateField("year", e.target.value ? Number(e.target.value) : undefined)}
-                />
+                  value={form.year !== undefined ? String(form.year) : ""}
+                  onChange={e =>
+                    updateField("year", e.target.value ? Number(e.target.value) : undefined)
+                  }
+                >
+                  <option value="">Select year</option>
+                  {YEARS.map(y => (
+                    <option key={y} value={y}>
+                      {y}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div>
                 <label className="block text-xs font-medium mb-1">Mileage</label>
@@ -92,19 +106,47 @@ export default function NewReportPage() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-medium mb-1">Make</label>
-                <input
+                <select
                   className="w-full border rounded px-2 py-1 text-sm"
                   value={form.make}
-                  onChange={e => updateField("make", e.target.value)}
-                />
+                  onChange={e => {
+                    const newMake = e.target.value;
+                    setForm(prev => ({
+                      ...prev,
+                      make: newMake,
+                      model: "",
+                    }));
+                  }}
+                >
+                  <option value="">Select make</option>
+                  {MAKES.map(m => (
+                    <option key={m} value={m}>
+                      {m}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div>
                 <label className="block text-xs font-medium mb-1">Model</label>
-                <input
-                  className="w-full border rounded px-2 py-1 text-sm"
+                <select
+                  className="w-full border rounded px-2 py-1 text-sm disabled:bg-gray-100 disabled:text-gray-400"
                   value={form.model}
                   onChange={e => updateField("model", e.target.value)}
-                />
+                  disabled={!form.make}
+                >
+                  {!form.make ? (
+                    <option value="">Select a make first</option>
+                  ) : (
+                    <>
+                      <option value="">All models</option>
+                      {availableModels.map(m => (
+                        <option key={m} value={m}>
+                          {m}
+                        </option>
+                      ))}
+                    </>
+                  )}
+                </select>
               </div>
             </div>
 
