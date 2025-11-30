@@ -24,7 +24,10 @@ export default function NewReportPage() {
 
   const availableModels = useMemo(() => {
     if (!form.make) return [];
-    return VEHICLE_MAKE_MODELS[form.make] ?? [];
+    const models = VEHICLE_MAKE_MODELS[form.make] ?? [];
+    // Deduplicate model names so we don't get duplicate React keys (e.g., "C-HR" twice)
+    const uniqueModels = Array.from(new Set(models));
+    return uniqueModels;
   }, [form.make]);
 
   const [loading, setLoading] = useState(false);

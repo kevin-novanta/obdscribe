@@ -34,7 +34,7 @@ export default async function AppLayout({
             href="/app/history"
             className="block px-2 py-1 rounded hover:bg-slate-100"
           >
-            History (later)
+            History
           </Link>
           <Link
             href="/app/settings"
