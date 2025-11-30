@@ -67,11 +67,45 @@ export default async function HistoryPage({
     filters
   );
 
+  const hasFilters = Boolean(
+    sp.make ||
+      sp.model ||
+      sp.code ||
+      sp.q ||
+      sp.from ||
+      sp.to
+  );
+
+  const qs = new URLSearchParams();
+  if (sp.make) qs.set("make", sp.make);
+  if (sp.model) qs.set("model", sp.model);
+  if (sp.code) qs.set("code", sp.code);
+  if (sp.q) qs.set("q", sp.q);
+  if (sp.from) qs.set("from", sp.from);
+  if (sp.to) qs.set("to", sp.to);
+
+  const exportHref = `/api/reports/export?${qs.toString()}`;
+
   return (
     <div className="p-6 space-y-4">
       <h1 className="text-lg font-semibold mb-2">Report History</h1>
 
       <HistoryFilterForm searchParams={sp} />
+
+      <div className="flex justify-between items-center mb-2 text-sm">
+        <p className="text-gray-600">
+          Showing {reports.length} reports
+          {hasFilters ? " (filtered)" : ""}
+        </p>
+        <a
+          href={exportHref}
+          className="underline text-blue-600"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Export CSV
+        </a>
+      </div>
 
       {reports.length === 0 ? (
         <div className="text-sm text-gray-500">
