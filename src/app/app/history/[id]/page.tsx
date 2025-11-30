@@ -1,5 +1,3 @@
-
-
 // src/app/app/history/[id]/page.tsx
 //
 // Report detail page:
@@ -58,12 +56,22 @@ export default async function ReportDetailPage({ params }: Params) {
             Created at {report.createdAt.toLocaleString()}
           </p>
         </div>
-        <Link
-          href="/app/history"
-          className="text-blue-600 underline text-sm"
-        >
-          Back to history
-        </Link>
+        <div className="flex items-center gap-3">
+          <a
+            href={`/api/reports/${report.id}/pdf`}
+            className="text-sm underline text-blue-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download PDF
+          </a>
+          <Link
+            href="/app/history"
+            className="text-blue-600 underline text-sm"
+          >
+            Back to history
+          </Link>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 text-sm">

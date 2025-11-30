@@ -83,6 +83,14 @@ export default async function HistoryPage() {
                     >
                       View
                     </Link>
+                    <a
+                      href={`/api/reports/${r.id}/pdf`}
+                      className="underline text-blue-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      PDF
+                    </a>
                     <DeleteReportButton reportId={r.id} />
                   </td>
                 </tr>
