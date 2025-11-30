@@ -10,6 +10,7 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { listRecentReportsForShop } from "@/lib/history";
 import { parseSessionToken } from "@/lib/session";
+import { DeleteReportButton } from "@/app/app/history/DeleteReportButton";
 
 function formatDate(d: Date) {
   return d.toLocaleString();
@@ -82,7 +83,7 @@ export default async function HistoryPage() {
                     >
                       View
                     </Link>
-                    {/* Delete + PDF buttons will be wired in future chapters */}
+                    <DeleteReportButton reportId={r.id} />
                   </td>
                 </tr>
               ))}

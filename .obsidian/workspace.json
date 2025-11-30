@@ -172,6 +172,7 @@
   },
   "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
+    "src/app/app/history/DeleteReportButton.tsx",
     "src/lib/history.ts",
     "src/app/api/reports/[id]/pdf/route.ts",
     "src/app/api/reports/[id]/pdf",
@@ -184,7 +185,6 @@
     "src/app/app/history",
     "docs/PERSONAL/Untitled.md",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
-    "docs/evidence/evidence-00002-11-30-25/obdscribe_evidence_vehicle_dropdowns_v0.1.pdf",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.08.32 PM.png",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.57 PM.png",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.35 PM.png",
