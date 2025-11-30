@@ -122,6 +122,7 @@ const created = await prisma.report.create({
     maintenanceSuggestions: JSON.stringify(
       report.maintenanceSuggestions ?? []
     ),
+    status: "COMPLETED",
     promptVersion: "1",
 
     // NEW: required by your Prisma schema
