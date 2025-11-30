@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { YEARS, MAKES, VEHICLE_MAKE_MODELS } from "@/data/vehicleOptions";
 
 type FormState = {
@@ -21,6 +22,35 @@ export default function NewReportPage() {
     codes: "",
     complaint: "",
   });
+
+  const searchParams = useSearchParams();
+  const cloneId = searchParams.get("cloneId");
+
+  useEffect(() => {
+    async function loadClone() {
+      if (!cloneId) return;
+      try {
+        const res = await fetch(`/api/reports/${cloneId}`);
+        if (!res.ok) return;
+        const data = await res.json();
+
+        setForm(prev => ({
+          ...prev,
+          year: data.vehicleYear ?? prev.year,
+          make: data.vehicleMake ?? prev.make,
+          model: data.vehicleModel ?? prev.model,
+          mileage: data.mileage ?? prev.mileage,
+          complaint: data.complaint ?? prev.complaint,
+          notes: data.notes ?? prev.notes,
+          codes: data.codesRaw ?? prev.codes,
+        }));
+      } catch (err) {
+        console.error("Failed to load clone source", err);
+      }
+    }
+
+    loadClone();
+  }, [cloneId]);
 
   const availableModels = useMemo(() => {
     if (!form.make) return [];

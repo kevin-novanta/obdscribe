@@ -131,6 +131,12 @@ export default async function HistoryPage({
                     >
                       PDF
                     </a>
+                    <Link
+                      href={`/app/new-report?cloneId=${r.id}`}
+                      className="underline text-blue-600"
+                    >
+                      Clone
+                    </Link>
                     <DeleteReportButton reportId={r.id} />
                   </td>
                 </tr>
