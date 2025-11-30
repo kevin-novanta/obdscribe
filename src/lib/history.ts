@@ -1,36 +1,67 @@
-
-
 // src/lib/history.ts
 //
 // Helpers for querying and fetching report history for a given shop/user.
-// Keeping this logic in one place makes it easier to evolve later
-// (filters, search, pagination, etc.).
+// Now extended with flexible filtering for history search.
 
 import { prisma } from "@/lib/db";
 
-/**
- * Return the most recent reports for a given shop.
- * Optionally filter by userId if you want per-user history.
- *
- * For v0 we cap this at 100 to keep things fast and simple.
- */
+export type HistoryFilterOptions = {
+  make?: string;
+  model?: string;
+  code?: string;
+  q?: string; // complaint search
+  from?: Date;
+  to?: Date;
+};
+
 export async function listRecentReportsForShop(
   shopId: string,
-  userId?: string
+  userId?: string,
+  filters?: HistoryFilterOptions
 ) {
+  const where: any = {
+    shopId,
+  };
+
+  if (userId) {
+    where.userId = userId;
+  }
+
+  if (filters?.make) {
+    where.vehicleMake = filters.make;
+  }
+
+  if (filters?.model) {
+    where.vehicleModel = filters.model;
+  }
+
+  if (filters?.code) {
+    where.codesRaw = {
+      contains: filters.code,
+      mode: "insensitive",
+    };
+  }
+
+  if (filters?.q) {
+    where.complaint = {
+      contains: filters.q,
+      mode: "insensitive",
+    };
+  }
+
+  if (filters?.from || filters?.to) {
+    where.createdAt = {};
+    if (filters.from) where.createdAt.gte = filters.from;
+    if (filters.to) where.createdAt.lte = filters.to;
+  }
+
   return prisma.report.findMany({
-    where: userId
-      ? { shopId, userId }
-      : { shopId },
+    where,
     orderBy: { createdAt: "desc" },
     take: 100,
   });
 }
 
-/**
- * Fetch a single report by id, scoped to a shop.
- * This ensures a user cannot access another shop's reports.
- */
 export async function getReportByIdForShop(shopId: string, id: string) {
   return prisma.report.findFirst({
     where: {
