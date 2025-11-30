@@ -103,7 +103,7 @@ export default function HistoryFilterForm({
             {make ? "All models" : "Select a make first"}
           </option>
           {make &&
-            modelsForMake.map((mod) => (
+            Array.from(new Set(modelsForMake)).map((mod) => (
               <option key={mod} value={mod}>
                 {mod}
               </option>

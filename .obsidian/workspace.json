@@ -11,14 +11,12 @@
             "id": "67dffb889ca10b1b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.pdf"
               },
-              "icon": "lucide-file",
-              "title": "obdscribe_history_feature_pack_v1"
+              "icon": "lucide-file-text",
+              "title": "obdscribe_history_feature_evidence_v0.1"
             }
           }
         ]
@@ -94,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +101,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for obdscribe_history_feature_pack_v1"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +110,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from obdscribe_history_feature_pack_v1"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
+                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of obdscribe_history_feature_pack_v1"
+              "title": "Outline of obdscribe_history_feature_evidence_v0.1"
             }
           }
         ]
@@ -169,11 +165,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "67dffb889ca10b1b",
+  "active": "02a7b632634d30c6",
   "lastOpenFiles": [
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.33 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.06 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.54.46 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.54.14 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.53.47 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.53.18 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.52.49 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.51.54 PM.png",
+    "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.pdf",
+    "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
+    "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+    "docs/evidence/evidence-00003-11-30-25",
     "src/app/app/history/HistoryFilterForm.tsx",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
-    "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
     "docs/PERSONAL/addons.md",
     "prisma/migrations/20251130225054_add_report_status/migration.sql",
     "prisma/migrations/20251130225054_add_report_status",
@@ -182,9 +189,6 @@
     "src/app/api/reports/export",
     "src/app/api/reports/[id]/export",
     "src/app/app/history/DeleteReportButton.tsx",
-    "src/lib/history.ts",
-    "src/app/api/reports/[id]/pdf/route.ts",
-    "src/app/api/reports/[id]/pdf",
     "docs/PERSONAL/Untitled.md",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.08.32 PM.png",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.57 PM.png",
@@ -195,13 +199,8 @@
     "docs/PERSONAL/obdscribe_v0_build_blueprint_and_repo_layout.md",
     "docs/PERSONAL/obdscribe_master_product_engineering_spec_v0.2.md",
     "README.md",
-    "styles/Untitled design (9).png",
-    "styles/Untitled design (8).png",
-    "Untitled design (9).png",
-    "Untitled design (8).png",
     "docs/addons.md",
     "docs/evidence/evidence-00001-11-27-25/obdscribe_ai_engine_model_config_v0.1.md",
-    "docs/evidence/evidence-00001-11-27-25/image.png",
     "docs/obdscribe_master_product_engineering_spec_v0.2.md",
     "docs/Untitled.md",
     "docs/obdscribe_v0_goals_and_expectations.md"

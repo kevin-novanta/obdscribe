@@ -1,25 +1,28 @@
 // src/app/api/reports/[id]/route.ts
 //
-// DELETE endpoint for removing a single report, scoped to the current shop.
-// This ensures a user can only delete reports that belong to their shop.
+// DELETE + GET endpoints for a single report, scoped to the current shop.
 
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionFromRequest } from "@/lib/session";
 import { getReportByIdForShop } from "@/lib/history";
 
-type Params = { params: { id: string } };
+// In the App Router, `params` can be a Promise, so we type it that way
+type RouteContext = {
+  params: Promise<{ id: string }>;
+};
 
-export async function DELETE(req: Request, { params }: Params) {
+export async function DELETE(req: Request, context: RouteContext) {
+  const { id } = await context.params; // ✅ unwrap params
+
   const session = await getSessionFromRequest(req);
-
   if (!session) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
   const report = await prisma.report.findFirst({
     where: {
-      id: params.id,
+      id,
       shopId: session.shopId,
     },
   });
@@ -35,13 +38,15 @@ export async function DELETE(req: Request, { params }: Params) {
   return NextResponse.json({ ok: true });
 }
 
-export async function GET(req: Request, { params }: Params) {
+export async function GET(req: Request, context: RouteContext) {
+  const { id } = await context.params; // ✅ unwrap params
+
   const session = await getSessionFromRequest(req);
   if (!session) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
-  const report = await getReportByIdForShop(session.shopId, params.id);
+  const report = await getReportByIdForShop(session.shopId, id);
   if (!report) {
     return NextResponse.json({ message: "Not found" }, { status: 404 });
   }

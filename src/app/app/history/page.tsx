@@ -1,12 +1,3 @@
-// src/app/app/history/page.tsx
-//
-// v0 history page with filters:
-// - Reads session from cookies
-// - Supports filters via searchParams (make, model, code, q, from, to)
-// - Lists recent reports for the current shop in a basic table
-// - "View" action links to /app/history/[id]
-// - Delete/PDF actions wired via DeleteReportButton + PDF link
-
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { listRecentReportsForShop } from "@/lib/history";
