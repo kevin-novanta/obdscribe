@@ -1,5 +1,4 @@
 # Ignore exported/binary docs
-*.pdf
 *.doc
 *.docx
 *.ppt
