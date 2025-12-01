@@ -41,6 +41,13 @@ model User {
   // Settings v0
   displayName  String?  // e.g. "Kevin N."
 
+  // Auth v0.1 – multi-provider fields
+  provider        String   @default("password") // "password" | "google" | "apple" | "phone"
+  googleId        String?  @unique
+  appleSub        String?  @unique
+  phoneNumber     String?  @unique
+  emailVerifiedAt DateTime?
+
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 

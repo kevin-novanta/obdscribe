@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "obdscribe_settings_build_blueprint_v0.1"
+              "title": "obdscribe_auth_signup_v0.1"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "46b7fda73484339a",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for obdscribe_settings_build_blueprint_v0.1"
+              "title": "Backlinks for obdscribe_auth_signup_v0.1"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from obdscribe_settings_build_blueprint_v0.1"
+              "title": "Outgoing links from obdscribe_auth_signup_v0.1"
             }
           },
           {
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of obdscribe_settings_build_blueprint_v0.1"
+              "title": "Outline of obdscribe_auth_signup_v0.1"
             }
           }
         ]
@@ -171,8 +172,20 @@
   },
   "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
-    "docs/evidence/evidence-00004-11-30-25-SETTINGS/obdscribe_settings_overview_v0.1.pdf",
-    "docs/evidence/evidence-00003-11-30-25-HISTORY/obdscribe_history_feature_evidence_v0.1.pdf",
+    "prisma/migrations/20251201014132_add_auth_providers/migration.sql",
+    "prisma/migrations/20251201014132_add_auth_providers",
+    "src/app/app/signup/page.tsx",
+    "src/app/app/signup",
+    "src/app/api/auth/phone/route.ts",
+    "src/app/api/auth/phone",
+    "src/app/api/auth/apple/route.ts",
+    "src/app/api/auth/apple",
+    "src/app/api/auth/google/route.ts",
+    "src/app/api/auth/google",
+    "src/app/api/auth/signup/route.ts",
+    "docs/PERSONAL/addons.md",
+    "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
+    "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25-HISTORY/obdscribe_history_feature_evidence_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25-HISTORY/Screenshot 2025-11-30 at 6.55.33 PM.png",
     "docs/evidence/evidence-00003-11-30-25-HISTORY/Screenshot 2025-11-30 at 6.55.06 PM.png",
@@ -182,20 +195,9 @@
     "docs/evidence/evidence-00003-11-30-25-HISTORY/Screenshot 2025-11-30 at 6.53.18 PM.png",
     "docs/evidence/evidence-00003-11-30-25-HISTORY/Screenshot 2025-11-30 at 6.52.49 PM.png",
     "docs/evidence/evidence-00003-11-30-25-HISTORY/Screenshot 2025-11-30 at 6.51.54 PM.png",
-    "docs/evidence/evidence-00003-11-30-25-HISTORY",
     "docs/evidence/evidence-00004-11-30-25-SETTINGS/Screenshot 2025-11-30 at 8.15.55 PM.png",
-    "docs/evidence/evidence-00004-11-30-25-SETTINGS",
     "docs/evidence/evidence-00004-11-30-25/obdscribe_settings_v0_evidence_pack.md",
     "docs/evidence/evidence-00004-11-30-25/Screenshot 2025-11-30 at 8.15.55 PM.png",
-    "docs/evidence/evidence-00004-11-30-25",
-    "src/app/app/settings/UserSettingsPanel.tsx",
-    "src/app/app/settings/ShopSettingsPanel.tsx",
-    "src/app/app/settings/ShopSettingsPanel",
-    "prisma/migrations/20251201002717_add_settings_fields/migration.sql",
-    "prisma/migrations/20251201002717_add_settings_fields",
-    "src/types/settings.ts",
-    "docs/PERSONAL/addons.md",
-    "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
     "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
