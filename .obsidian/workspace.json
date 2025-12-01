@@ -172,6 +172,7 @@
   },
   "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
+    "src/lib/validators/auth.ts",
     "prisma/migrations/20251201014132_add_auth_providers/migration.sql",
     "prisma/migrations/20251201014132_add_auth_providers",
     "src/app/app/signup/page.tsx",
@@ -182,7 +183,6 @@
     "src/app/api/auth/apple",
     "src/app/api/auth/google/route.ts",
     "src/app/api/auth/google",
-    "src/app/api/auth/signup/route.ts",
     "docs/PERSONAL/addons.md",
     "docs/PERSONAL/obdscribe_auth_signup_v0.1.md",
     "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
