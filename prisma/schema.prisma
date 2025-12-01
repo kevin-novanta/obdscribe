@@ -16,6 +16,15 @@ enum ReportStatus {
 model Shop {
   id        String   @id @default(cuid())
   name      String
+
+  // Settings v0
+  displayName         String?   // e.g. "Demo Auto Repair"
+  phone               String?
+  address             String?
+  defaultReportMode   String?   // "standard" | "premium"
+  defaultReportTone   String?   // "plain_english" | "technical"
+  defaultIncludeMaint Boolean?  // include maintenance suggestions by default?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -28,6 +37,10 @@ model User {
   email        String   @unique
   passwordHash String
   role         String   @default("advisor") // "owner" | "advisor" later
+
+  // Settings v0
+  displayName  String?  // e.g. "Kevin N."
+
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 

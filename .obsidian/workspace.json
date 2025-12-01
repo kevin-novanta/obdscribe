@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "obdscribe_history_feature_evidence_v0.1"
+              "title": "obdscribe_settings_build_blueprint_v0.1"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for obdscribe_history_feature_evidence_v0.1"
+              "title": "Backlinks for obdscribe_settings_build_blueprint_v0.1"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from obdscribe_history_feature_evidence_v0.1"
+              "title": "Outgoing links from obdscribe_settings_build_blueprint_v0.1"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
+                "file": "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of obdscribe_history_feature_evidence_v0.1"
+              "title": "Outline of obdscribe_settings_build_blueprint_v0.1"
             }
           }
         ]
@@ -171,6 +171,19 @@
   },
   "active": "67dffb889ca10b1b",
   "lastOpenFiles": [
+    "prisma/migrations/20251201002717_add_settings_fields/migration.sql",
+    "prisma/migrations/20251201002717_add_settings_fields",
+    "src/types/settings.ts",
+    "src/lib/settings.ts",
+    "src/app/app/settings/page.tsx",
+    "src/app/app/settings",
+    "src/app/api/settings/user/route.ts",
+    "src/app/api/settings/user",
+    "src/app/api/settings/shop/route.ts",
+    "src/app/api/settings/shop",
+    "src/app/api/settings",
+    "docs/PERSONAL/addons.md",
+    "docs/PERSONAL/obdscribe_settings_build_blueprint_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.md",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.33 PM.png",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.55.06 PM.png",
@@ -180,19 +193,8 @@
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.53.18 PM.png",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.52.49 PM.png",
     "docs/evidence/evidence-00003-11-30-25/Screenshot 2025-11-30 at 6.51.54 PM.png",
-    "docs/evidence/evidence-00003-11-30-25/obdscribe_history_feature_evidence_v0.1.pdf",
     "docs/PERSONAL/obdscribe_history_feature_pack_v1.md",
-    "docs/evidence/evidence-00003-11-30-25",
-    "src/app/app/history/HistoryFilterForm.tsx",
     "docs/PERSONAL/obdscribe_history_page_v0_blueprint.md",
-    "docs/PERSONAL/addons.md",
-    "prisma/migrations/20251130225054_add_report_status/migration.sql",
-    "prisma/migrations/20251130225054_add_report_status",
-    "src/helpers",
-    "src/app/api/reports/export/route.ts",
-    "src/app/api/reports/export",
-    "src/app/api/reports/[id]/export",
-    "src/app/app/history/DeleteReportButton.tsx",
     "docs/PERSONAL/Untitled.md",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.08.32 PM.png",
     "docs/evidence/evidence-00002-11-30-25/Screenshot 2025-11-30 at 4.07.57 PM.png",
