@@ -2,6 +2,8 @@ export type RiskLevel = "low" | "medium" | "high";
 
 export type GenerateReportMode = "production" | "sandbox" | "debug" | "premium";
 
+export type ReportTone = "plain_english" | "technical";
+
 export type GenerateReportInput = {
   vehicle: {
     year: number;
@@ -14,6 +16,8 @@ export type GenerateReportInput = {
   complaint: string;
   notes?: string;
   mode?: GenerateReportMode;
+  tone?: ReportTone;
+  includeMaintenance?: boolean;
   shopContext?: {
     laborRate?: number;
   };

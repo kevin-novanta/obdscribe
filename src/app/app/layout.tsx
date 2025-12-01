@@ -40,7 +40,7 @@ export default async function AppLayout({
             href="/app/settings"
             className="block px-2 py-1 rounded hover:bg-slate-100"
           >
-            Settings (later)
+            Settings
           </Link>
         </nav>
       </aside>

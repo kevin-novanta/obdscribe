@@ -4,6 +4,7 @@ import { parseSessionToken } from "../../../lib/session";
 import { generateReport } from "../../../lib/ai/engine";
 import { logError } from "../../../lib/logger";
 import { isRateLimited } from "../../../lib/rateLimiter";
+import { getShopSettings } from "../../../lib/settings";
 
 export async function POST(req: NextRequest) {
   try {
@@ -59,7 +60,9 @@ export async function POST(req: NextRequest) {
       codes,
       complaint,
       notes,
-      mode,
+      mode: bodyMode,
+      tone: bodyTone,
+      includeMaintenance,
     } = body;
 
     // Normalize vehicle shape for AI engine + DB
@@ -95,18 +98,34 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 4) Call AI engine
+    // 4) Load shop settings to determine defaults for mode/tone/maintenance
+    const shopSettings = await getShopSettings(session.shopId);
+
+    const resolvedMode =
+      bodyMode ?? shopSettings?.defaultReportMode ?? "standard";
+
+    const resolvedTone =
+      bodyTone ?? shopSettings?.defaultReportTone ?? "plain_english";
+
+    const includeMaint: boolean =
+      typeof includeMaintenance === "boolean"
+        ? includeMaintenance
+        : Boolean(shopSettings?.defaultIncludeMaint ?? true);
+
+    // 5) Call AI engine using settings-aware defaults
     const report = await generateReport({
       vehicle,
       codes: codesArray,
       complaint,
       notes,
-      mode,
+      mode: resolvedMode,
+      tone: resolvedTone,
+      includeMaintenance: includeMaint,
       shopContext: {}, // you can add laborRate etc. later
     });
 
-    // 5) Persist report
-    const persistedMode = mode ?? "production";
+    // 6) Persist report (store the resolved mode)
+    const persistedMode = resolvedMode;
 
 const created = await prisma.report.create({
   data: {

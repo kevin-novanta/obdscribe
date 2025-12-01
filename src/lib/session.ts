@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 const AUTH_SECRET = process.env.AUTH_SECRET || "dev_secret_change_me";
 const SESSION_COOKIE_NAME = "obdscribe_session";
@@ -55,4 +56,14 @@ export async function getSessionFromRequest(
   const cookieHeader = req.headers.get("cookie");
   const token = getCookieFromHeader(cookieHeader, SESSION_COOKIE_NAME);
   return parseSessionToken(token);
+}
+
+/**
+ * Helper for server components / layouts:
+ * Use Next.js `cookies()` to read the session cookie and decode it.
+ */
+export async function getSessionFromCookies(): Promise<Session | null> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
+  return parseSessionToken(token ?? null);
 }

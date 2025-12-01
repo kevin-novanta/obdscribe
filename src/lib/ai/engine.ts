@@ -38,6 +38,8 @@ export async function generateReport(
   const systemPrompt = `
 You are an experienced automotive technician and service advisor.
 You explain issues clearly, avoid overconfidence, and respect that final diagnosis belongs to human technicians.
+Use the provided tone preference (plain_english vs technical) when writing.
+Include or omit maintenance suggestions based on the include_maintenance flag.
 Return only JSON matching the requested schema.
 `;
 
@@ -49,6 +51,8 @@ Return only JSON matching the requested schema.
     complaint: input.complaint,
     notes: input.notes ?? "",
     mileage_band: maintenanceBand,
+    tone_preference: input.tone ?? "plain_english",
+    include_maintenance: input.includeMaintenance ?? true,
   };
 
   const aiResponse = await openai.chat.completions.create({
