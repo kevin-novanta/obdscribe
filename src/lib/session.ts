@@ -1,3 +1,4 @@
+
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
@@ -24,6 +25,16 @@ export function parseSessionToken(
     return null;
   }
 }
+
+// Create a signed JWT for a session payload
+export function signJwtSession(session: Session): string {
+  return jwt.sign(session, AUTH_SECRET, {
+    expiresIn: "30d", // adjust if you want shorter/longer sessions
+  });
+}
+
+// Backwards-compatible alias for places that import signSessionCookie
+export const signSessionCookie = signJwtSession;
 
 /**
  * Extract a cookie value from a Cookie header string.
